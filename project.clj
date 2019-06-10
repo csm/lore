@@ -1,4 +1,4 @@
-(defproject com.github.csm/lore "0.1.0-SNAPSHOT"
+(defproject com.github.csm/lore "0.1.0"
   :description "Secret storage API for clojure"
   :url "https://github.com/csm/lore"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
