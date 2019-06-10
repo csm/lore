@@ -12,7 +12,7 @@
 
 (defn byte-buf?
   [v]
-  (instance? v ByteBuffer))
+  (instance? ByteBuffer v))
 
 (defn byte-buf->bytes
   "Return all readable bytes from the given byte buffer as a byte array."
