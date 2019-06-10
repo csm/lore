@@ -1,6 +1,6 @@
 (defproject com.github.csm/lore "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "Secret storage API for clojure"
+  :url "https://github.com/csm/lore"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.9.0"]
@@ -15,4 +15,13 @@
                                    [com.cognitect.aws/kms "718.2.448.0"]
                                    [buddy/buddy-core "1.5.0"]]
                     :source-paths ["scripts"]}}
-  :repl-options {:init-ns lore.repl})
+  :repl-options {:init-ns lore.repl}
+  :release-tasks [["vcs" "assert-committed"]
+                  ["change" "version"
+                   "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag"]
+                  ["deploy" "clojars"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]
+                  ["vcs" "push"]])
