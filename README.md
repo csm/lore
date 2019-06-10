@@ -4,7 +4,7 @@ Secret storage API.
 
 ## Usage
 
-Using KMS:
+### KMS
 
 ```clojure
 (require '[com.stuartsierra.component :refer [start]])
@@ -17,6 +17,15 @@ Using KMS:
 (require '[lore.api.async :refer :all])
 
 (def plaintext (async/<!! (decrypt lore secret)))
+```
+
+KMS requires [Cognitect's AWS library](https://github.com/cognitect-labs/aws-api).
+Your project dependencies should include (update versions as appropriate):
+
+```clojure
+[[com.cognitect.aws/api "0.8.305"]
+ [com.cognitect.aws/endpoints "1.1.11.565"]
+ [com.cognitect.aws/kms "718.2.448.0"]]
 ```
 
 ## License

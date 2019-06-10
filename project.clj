@@ -8,9 +8,11 @@
                  [com.stuartsierra/component "0.3.2"]]
   :profiles {:provided {:dependencies [[com.cognitect.aws/api "0.8.305"]
                                        [com.cognitect.aws/endpoints "1.1.11.565"]
-                                       [com.cognitect.aws/kms "718.2.448.0"]]}
+                                       [com.cognitect.aws/kms "718.2.448.0"]
+                                       [buddy/buddy-core "1.5.0"]]}
              :repl {:dependencies [[com.cognitect.aws/api "0.8.305"]
                                    [com.cognitect.aws/endpoints "1.1.11.565"]
-                                   [com.cognitect.aws/kms "718.2.448.0"]]
+                                   [com.cognitect.aws/kms "718.2.448.0"]
+                                   [buddy/buddy-core "1.5.0"]]
                     :source-paths ["scripts"]}}
   :repl-options {:init-ns lore.repl})
