@@ -7,17 +7,21 @@ Secret storage API.
 Using KMS:
 
 ```clojure
-(require '[cognitect.aws.api :refer [client]])
-(require '[lore.api.async.impl.kms :as kms])
+(require '[com.stuartsierra.component :refer [start]])
+(require '[lore.component :refer :all])
 
-(def kms-client (client {:api :kms}))
 
-(def kms-store (kms/->AsyncKMSSecretStore kms-client))
+(def lore (start (map->SecretStore {:store-type :kms})))
+
+(require '[clojure.core.async :as async])
+(require '[lore.api.async :refer :all])
+
+(def plaintext (async/<!! (decrypt lore secret)))
 ```
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright © 2019 Noon Home
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
