@@ -4,6 +4,10 @@ Secret storage API.
 
 ## Usage
 
+Provided backends include [KMS](https://aws.amazon.com/kms/), [buddy](https://github.com/funcool/buddy),
+and JCE (which uses `java.security.KeyStore`, `javax.crypto.Cipher`, and friends). Also available
+is a "dummy" backend that does no decryption.
+
 ### KMS
 
 ```clojure
@@ -27,6 +31,15 @@ Your project dependencies should include (update versions as appropriate):
  [com.cognitect.aws/endpoints "1.1.11.565"]
  [com.cognitect.aws/kms "718.2.448.0"]]
 ```
+
+### JCE
+
+The JCE backend requires [transit](https://github.com/cognitect/transit-clj). You can
+refine what format to use for transit; the default is `:msgpack`.
+
+The JCE backend is most interesting with a PKCS#11 compatible Hardware Security Module.
+This can be run against [SoftHSM](https://www.opendnssec.org/softhsm/) for testing
+without a real HSM.
 
 ## License
 
