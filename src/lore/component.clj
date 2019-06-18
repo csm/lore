@@ -15,6 +15,9 @@
               :buddy (dynacall 'buddy/buddy-core
                                'lore.api.async.impl.buddy/->buddy-store
                                arguments)
+              :jce (dynacall 'cognitect.transit/transit-clj
+                             'lore.api.async.impl.jce/->secret-store
+                             arguments)
               :dummy (lore.api.async.impl.dummy/->DummySecretStore)
               nil (throw (IllegalArgumentException. "argument `store-type' is required"))
               (throw (IllegalArgumentException. (str "invalid store-type: " store-type))))))
