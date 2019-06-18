@@ -9,11 +9,13 @@
   :profiles {:provided {:dependencies [[com.cognitect.aws/api "0.8.305"]
                                        [com.cognitect.aws/endpoints "1.1.11.565"]
                                        [com.cognitect.aws/kms "718.2.448.0"]
-                                       [buddy/buddy-core "1.5.0"]]}
+                                       [buddy/buddy-core "1.5.0"]
+                                       [com.cognitect/transit-clj "0.8.313"]]}
              :repl {:dependencies [[com.cognitect.aws/api "0.8.305"]
                                    [com.cognitect.aws/endpoints "1.1.11.565"]
                                    [com.cognitect.aws/kms "718.2.448.0"]
-                                   [buddy/buddy-core "1.5.0"]]
+                                   [buddy/buddy-core "1.5.0"]
+                                   [com.cognitect/transit-clj "0.8.313"]]
                     :source-paths ["scripts"]}}
   :repl-options {:init-ns lore.repl}
   :release-tasks [["vcs" "assert-committed"]
