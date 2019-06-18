@@ -1,8 +1,12 @@
 # lore
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.github.csm/lore.svg)](https://clojars.org/com.github.csm/lore)
+
 Secret storage API.
 
 ## Usage
+
+`[com.github.csm/lore "0.1.2"]`
 
 Provided backends include [KMS](https://aws.amazon.com/kms/), [buddy](https://github.com/funcool/buddy),
 and JCE (which uses `java.security.KeyStore`, `javax.crypto.Cipher`, and friends). Also available
